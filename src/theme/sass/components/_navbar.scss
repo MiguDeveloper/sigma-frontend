@@ -1,0 +1,13 @@
+.topbar {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0.75rem 1.5rem rgb(18 38 63 / 3%);
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding-right: 12px;
+}

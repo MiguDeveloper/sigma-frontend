@@ -1,0 +1,120 @@
+.sidebar {
+  background: var(--sg-color-bg-sidebar);
+  width: 250px;
+  z-index: 1;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 0 0.75rem 1.5rem rgb(18 38 63 / 3%);
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+  }
+
+  &__brand {
+    display: block;
+  }
+
+  &__img {
+    height: 19px;
+  }
+
+  &__body {
+    max-height: calc(100% - 70px);
+    height: 100%;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(42, 48, 66, 0.274);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px #a2adb7;
+    }
+  }
+}
+
+.menu {
+  &__title {
+    color: var(--sg-color-title-menu);
+    text-transform: uppercase;
+    padding: 12px 20px !important;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    font-size: 11px;
+    font-weight: 600;
+    display: block;
+  }
+
+  &--has-arrow::after {
+    font-family: 'Material Icons';
+    content: 'keyboard_arrow_down';
+    display: block;
+    float: right;
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  &__dropdown--active.menu--has-arrow::after {
+    transform: rotate(-180deg);
+  }
+
+  &__dropdown:hover {
+    color: white;
+  }
+
+  &__subitem li i {
+    min-width: 1.75rem;
+    padding-bottom: 0.125em;
+    font-size: 1.25rem;
+    line-height: 1.40625rem;
+    vertical-align: middle;
+  }
+
+  &__subitem-item > a.active {
+    color: white;
+  }
+
+  &__item a {
+    padding: 0.4rem 1.5rem 0.4rem 3.5rem !important;
+    font-size: 13px;
+    &.active {
+      color: white;
+    }
+  }
+}
+
+ul li a,
+.menu__dropdown {
+  display: block;
+  padding: 0.625rem 1.5rem;
+  position: relative;
+  font-size: 13px;
+  transition: all 0.4s;
+  color: var(--sg-color-item-menu);
+  cursor: pointer;
+}
+
+ul li a:hover {
+  color: white;
+}
+
+.menu__dropdown.menu__dropdown--active {
+  color: white;
+}
+
+ul[id^='asSubmenu'] {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.4s;
+}

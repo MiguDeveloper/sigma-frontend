@@ -1,0 +1,18 @@
+body {
+  font-family: var(--sg-font-sans-serif);
+  line-height: 1.5;
+  font-weight: 400;
+  background: var(--sg-bg-color);
+  color: var(--sg-color-primary);
+  font-size: var(--sg-font-size);
+}
+
+.list-unstyled {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

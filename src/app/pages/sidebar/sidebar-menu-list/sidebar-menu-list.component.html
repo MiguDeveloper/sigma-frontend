@@ -1,0 +1,48 @@
+<nav class="sidebar">
+  <div class="sidebar__header">
+    <a [routerLink]="['/inicio']" class="sidebar__brand">
+      <img src="/assets/logo-light.png" class="sidebar__img" />
+    </a>
+  </div>
+
+  <div class="sidebar__body">
+    <ul class="menu list-unstyled" *ngIf="menu.groups?.length">
+      <li *ngFor="let group of menu?.groups; let idxGroup = index">
+        <span class="menu__title">{{ group.name }}</span>
+
+        <ul *ngIf="group.items.length" class="menu__subitem list-unstyled">
+          <li
+            *ngFor="let itemOfGroup of group.items; let idxGroupItem = index"
+            class="menu__subitem-item"
+          >
+            <span
+              *ngIf="itemOfGroup.items?.length; else navItem"
+              (click)="toggle(idxGroup, idxGroupItem)"
+              class="menu__dropdown menu--has-arrow"
+              id="menu__dropdown{{ idxGroup }}{{ idxGroupItem }}"
+              ><i [class]="itemOfGroup.icon"></i>{{ itemOfGroup.name }}</span
+            >
+
+            <ng-template #navItem>
+              <a [routerLink]="[itemOfGroup.href]" routerLinkActive="active"
+                ><i [class]="itemOfGroup.icon"></i>{{ itemOfGroup.name }}</a
+              >
+            </ng-template>
+
+            <ul
+              *ngIf="itemOfGroup.items?.length"
+              class="list-unstyled"
+              id="asSubmenu{{ idxGroup }}{{ idxGroupItem }}"
+            >
+              <li *ngFor="let item of itemOfGroup.items" class="menu__item">
+                <a [routerLink]="item.href" routerLinkActive="active">{{
+                  item.name
+                }}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
