@@ -1,3 +1,4 @@
+import { SigmaModule } from './../sigma/sigma.module';
 import { RouterModule } from '@angular/router';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,12 @@ import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [PagesComponent, NavbarComponent, FooterComponent],
-  imports: [CommonModule, RouterModule, SidebarModule, PagesRoutingModule],
+  imports: [
+    CommonModule,
+    SigmaModule,
+    RouterModule,
+    SidebarModule,
+    PagesRoutingModule,
+  ],
 })
 export class PagesModule {}

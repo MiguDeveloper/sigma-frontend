@@ -184,12 +184,18 @@ export class SidebarItems {
               active: false,
             },
             {
-              name: 'Contacts',
+              name: 'UI Components',
               order: 2,
               enable: true,
               icon: 'bx bxs-user-detail',
               active: true,
               items: [
+                {
+                  name: 'General',
+                  order: 0,
+                  enable: true,
+                  href: 'ui-elements/general',
+                },
                 {
                   name: 'User list',
                   order: 1,

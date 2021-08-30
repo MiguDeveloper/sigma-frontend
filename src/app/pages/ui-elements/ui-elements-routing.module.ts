@@ -1,0 +1,17 @@
+import { GeneralComponent } from './general/general.component';
+import { SgModuleUiElmentsRoutes } from './../../utils/sg-routes';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: SgModuleUiElmentsRoutes.General,
+    component: GeneralComponent,
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class UiElementsRoutingModule {}
