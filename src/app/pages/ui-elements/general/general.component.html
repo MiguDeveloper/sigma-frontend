@@ -1,1 +1,82 @@
-<p>general works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="page-title-box flex-space-between">
+      <h4>{{ title }}</h4>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <sg-simple-card [title]="'Buttons'">
+      <p>
+        Propiedad input [buttonStyle]="'secondary'", [buttonStyle]="'success'",
+        etc
+      </p>
+      <div class="buttons-items">
+        <sg-button
+          (clicked)="onClickButton('primary')"
+          [buttonStyle]="'primary'"
+          >primary</sg-button
+        >
+        <sg-button [buttonStyle]="'secondary'">secondary</sg-button>
+        <sg-button [buttonStyle]="'success'">success</sg-button>
+        <sg-button [buttonStyle]="'info'">info</sg-button>
+        <sg-button [buttonStyle]="'warning'">warning</sg-button>
+        <sg-button [buttonStyle]="'danger'">danger</sg-button>
+        <sg-button [buttonStyle]="'dark'">dark</sg-button>
+        <sg-button [buttonStyle]="'link'">link</sg-button>
+        <sg-button [buttonStyle]="'light'">light</sg-button>
+        <sg-button [buttonStyle]="'primary'" [disabled]="true"
+          >disabled</sg-button
+        >
+      </div>
+    </sg-simple-card>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <sg-simple-card [title]="'Outline buttons'">
+      <p>Propiedad input [buttonStyle]="'secondary--outline'"</p>
+      <div class="buttons-items">
+        <sg-button
+          (clicked)="onClickButton('primary--outline')"
+          [buttonStyle]="'primary--outline'"
+          >primary</sg-button
+        >
+        <sg-button [buttonStyle]="'secondary--outline'">secondary</sg-button>
+        <sg-button [buttonStyle]="'success--outline'">success</sg-button>
+        <sg-button [buttonStyle]="'info--outline'">info</sg-button>
+        <sg-button [buttonStyle]="'warning--outline'">warning</sg-button>
+        <sg-button [buttonStyle]="'danger--outline'">danger</sg-button>
+        <sg-button [buttonStyle]="'dark--outline'">dark</sg-button>
+        <sg-button [buttonStyle]="'light--outline'">light</sg-button>
+      </div>
+    </sg-simple-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <sg-simple-card [title]="'Button sizes'">
+      <p>Propiedad input [size]="'lg'"</p>
+      <div class="buttons-items">
+        <sg-button [size]="'lg'">large button</sg-button>
+        <sg-button [size]="'md'">medium button</sg-button>
+        <sg-button [size]="'sm'">small button</sg-button>
+      </div>
+    </sg-simple-card>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <sg-simple-card [title]="'Block buttons'">
+      <p>Propiedad input [block]="true"</p>
+      <div class="grid gap-2">
+        <sg-button [size]="'lg'" [block]="true">Block button</sg-button>
+        <sg-button
+          [buttonStyle]="'secondary--outline'"
+          [size]="'sm'"
+          [block]="true"
+          >Block button small</sg-button
+        >
+      </div>
+    </sg-simple-card>
+  </div>
+</div>

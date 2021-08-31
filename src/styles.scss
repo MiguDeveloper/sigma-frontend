@@ -1,6 +1,11 @@
+@import 'src/theme/sass/core/variables';
+
 // Plugins ::: files
 @import 'src/theme/sass/plugins/normalize';
-@import 'src/theme/sass/core/variables';
+@import 'src/theme/sass/plugins/bootstrap/functions';
+@import 'src/theme/sass/plugins/bootstrap/variables';
+@import 'src/theme/sass/plugins/bootstrap/mixins';
+@import 'src/theme/sass/plugins/bootstrap/grid';
 
 // General web ::: files
 @import 'src/theme/sass/core/general';

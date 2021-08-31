@@ -1,1 +1,10 @@
-<p>button works!</p>
+<button
+  (click)="!disabled ? clicked.emit() : null"
+  [type]="type"
+  class="btn btn--{{ size }} btn--{{ buttonStyle }} {{ customClass }} {{
+    btnBlockClass
+  }}"
+  [class.disabled]="disabled"
+>
+  <ng-content></ng-content>
+</button>

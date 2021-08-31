@@ -1,0 +1,17 @@
+.card {
+  margin-bottom: 24px;
+  box-shadow: 0 0.75rem 1.5rem rgb(18 38 63 / 3%);
+  position: relative;
+  background-color: #fff;
+  border-radius: 0.25rem;
+
+  &-body {
+    padding: 1.25rem;
+  }
+
+  &-title {
+    font-size: 15px;
+    margin-bottom: 7px;
+    font-weight: 600;
+  }
+}
