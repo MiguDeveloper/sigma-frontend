@@ -60,3 +60,17 @@ a {
 .gap-2 {
   gap: 0.5rem !important;
 }
+
+.card-desc {
+  margin-bottom: 24px;
+  color: var(--sg-color-p-card);
+}
+
+[type='button']:not(:disabled):not(.disabled),
+[type='submit']:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.vert-align-middle {
+  vertical-align: middle;
+}

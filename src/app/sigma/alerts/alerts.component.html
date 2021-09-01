@@ -1,0 +1,40 @@
+<div *ngIf="!closeAlert" class="alert alert--{{ type }} flex-space-between">
+  <div class="flex-message">
+    <ng-container *ngIf="showIcon">
+      <ng-container [ngSwitch]="type">
+        <i
+          *ngSwitchCase="types.Primary"
+          class="bx bx-info-square vert-align-middle"
+        ></i>
+        <i
+          *ngSwitchCase="types.Secondary"
+          class="bx bx-message-dots vert-align-middle"
+        ></i>
+        <i
+          *ngSwitchCase="types.Success"
+          class="bx bx-check-double vert-align-middle"
+        ></i>
+        <i
+          *ngSwitchCase="types.Danger"
+          class="bx bx-block vert-align-middle"
+        ></i>
+        <i
+          *ngSwitchCase="types.Warning"
+          class="bx bx-traffic-cone vert-align-middle"
+        ></i>
+        <i
+          *ngSwitchCase="types.Info"
+          class="bx bx-info-circle bx-rotate-180 vert-align-middle"
+        ></i> </ng-container
+    ></ng-container>
+    {{ message }}
+  </div>
+  <button
+    *ngIf="dismissible"
+    (click)="closeAlert = !closeAlert"
+    type="button"
+    class="close flex"
+  >
+    <i class="bx bx-x"></i>
+  </button>
+</div>

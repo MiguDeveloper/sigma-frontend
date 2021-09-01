@@ -9,7 +9,7 @@
 <div class="row">
   <div class="col-md-6 col-sm-12">
     <sg-simple-card [title]="'Buttons'">
-      <p>
+      <p class="card-desc">
         Propiedad input [buttonStyle]="'secondary'", [buttonStyle]="'success'",
         etc
       </p>
@@ -35,7 +35,9 @@
   </div>
   <div class="col-md-6 col-sm-12">
     <sg-simple-card [title]="'Outline buttons'">
-      <p>Propiedad input [buttonStyle]="'secondary--outline'"</p>
+      <p class="card-desc">
+        Propiedad input [buttonStyle]="'secondary--outline'"
+      </p>
       <div class="buttons-items">
         <sg-button
           (clicked)="onClickButton('primary--outline')"
@@ -57,7 +59,7 @@
 <div class="row">
   <div class="col-md-6 col-sm-12">
     <sg-simple-card [title]="'Button sizes'">
-      <p>Propiedad input [size]="'lg'"</p>
+      <p class="card-desc">Propiedad input [size]="'lg'"</p>
       <div class="buttons-items">
         <sg-button [size]="'lg'">large button</sg-button>
         <sg-button [size]="'md'">medium button</sg-button>
@@ -67,7 +69,7 @@
   </div>
   <div class="col-md-6 col-sm-12">
     <sg-simple-card [title]="'Block buttons'">
-      <p>Propiedad input [block]="true"</p>
+      <p class="card-desc">Propiedad input [block]="true"</p>
       <div class="grid gap-2">
         <sg-button [size]="'lg'" [block]="true">Block button</sg-button>
         <sg-button
@@ -76,6 +78,136 @@
           [block]="true"
           >Block button small</sg-button
         >
+      </div>
+    </sg-simple-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <sg-simple-card [title]="'Default Alert'">
+      <sg-alerts [message]="'este es un mensaje tipo primary'"></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo secondary'"
+        [type]="'secondary'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo success'"
+        [type]="'success'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo danger'"
+        [type]="'danger'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo warning'"
+        [type]="'warning'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo info'"
+        [type]="'info'"
+      ></sg-alerts>
+    </sg-simple-card>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <sg-simple-card [title]="'Dismissing'">
+      <sg-alerts
+        [message]="'este es un mensaje tipo primary'"
+        [dismissible]="true"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo secondary'"
+        [dismissible]="true"
+        [type]="'secondary'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo success'"
+        [dismissible]="true"
+        [type]="'success'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo danger'"
+        [dismissible]="true"
+        [type]="'danger'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo warning'"
+        [dismissible]="true"
+        [type]="'warning'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo info'"
+        [dismissible]="true"
+        [type]="'info'"
+      ></sg-alerts>
+    </sg-simple-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <sg-simple-card [title]="'Con icono'">
+      <sg-alerts
+        [message]="'este es un mensaje tipo primary'"
+        [dismissible]="true"
+        [showIcon]="true"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo secondary'"
+        [dismissible]="true"
+        [showIcon]="true"
+        [type]="'secondary'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo success'"
+        [dismissible]="true"
+        [showIcon]="true"
+        [type]="'success'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo danger'"
+        [dismissible]="true"
+        [showIcon]="true"
+        [type]="'danger'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo warning'"
+        [dismissible]="true"
+        [showIcon]="true"
+        [type]="'warning'"
+      ></sg-alerts>
+      <sg-alerts
+        [message]="'este es un mensaje tipo info'"
+        [dismissible]="true"
+        [showIcon]="true"
+        [type]="'info'"
+      ></sg-alerts>
+    </sg-simple-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <sg-simple-card [title]="'SweetAlert'">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <p class="card-desc">SweetAlert success</p>
+          <sg-button (clicked)="toggleAlertSuccess()">Alert success</sg-button>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <p class="card-desc">Warning message and confirm message</p>
+          <sg-button (clicked)="toggleAlertConfirm()">Alert básico</sg-button>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <p class="card-desc">Cuadro de dialogo posicionado</p>
+          <sg-button (clicked)="toggleDialog()">Alert básico</sg-button>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <p class="card-desc">
+            Mensaje con width, padding y background custom
+          </p>
+          <sg-button (clicked)="toggleAlertCustom()">Alert básico</sg-button>
+        </div>
       </div>
     </sg-simple-card>
   </div>
