@@ -13,6 +13,8 @@ export class ButtonComponent implements OnInit {
   @Input() customClass = '';
   @Input() block: boolean;
   @Input() disabled: boolean;
+  @Input() msgTooltip = '';
+  @Input() placeTooltip = 'top';
   @Output() clicked = new EventEmitter();
 
   constructor() {}

@@ -212,3 +212,48 @@
     </sg-simple-card>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-12">
+    <sg-simple-card [title]="'Tooltip'">
+      <p class="card-desc">Ejemplo de tooltip</p>
+      <div class="buttons-items">
+        <sg-button [buttonStyle]="'secondary'" [msgTooltip]="'Tooltip on top'"
+          >Tooltip on top</sg-button
+        >
+        <sg-button
+          [buttonStyle]="'info'"
+          [msgTooltip]="'Tooltip in right'"
+          [placeTooltip]="'right'"
+          >Tooltip in right</sg-button
+        >
+        <sg-button
+          [buttonStyle]="'secondary'"
+          [msgTooltip]="'Tooltip'"
+          [placeTooltip]="'auto'"
+          >Tooltip auto</sg-button
+        >
+        <sg-button
+          [buttonStyle]="'info'"
+          tooltip="tooltio on left"
+          placement="left"
+          >Tooltip on left</sg-button
+        >
+        <sg-button
+          [buttonStyle]="'secondary'"
+          [msgTooltip]="'Tooltip'"
+          [placeTooltip]="'bottom'"
+          >Tooltip on bottom</sg-button
+        >
+      </div>
+    </sg-simple-card>
+  </div>
+</div>
+<button
+  type="button"
+  class="btn btn-default btn-secondary mb-2"
+  tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  placement="right"
+>
+  Tooltip on right
+</button>

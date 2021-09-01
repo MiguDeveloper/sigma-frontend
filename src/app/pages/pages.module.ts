@@ -1,3 +1,4 @@
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SigmaModule } from './../sigma/sigma.module';
 import { RouterModule } from '@angular/router';
 import { SidebarModule } from './sidebar/sidebar.module';
@@ -17,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
     RouterModule,
     SidebarModule,
     PagesRoutingModule,
+    TooltipModule.forRoot(),
   ],
 })
 export class PagesModule {}

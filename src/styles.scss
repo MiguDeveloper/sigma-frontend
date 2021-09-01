@@ -5,7 +5,10 @@
 @import 'src/theme/sass/plugins/bootstrap/functions';
 @import 'src/theme/sass/plugins/bootstrap/variables';
 @import 'src/theme/sass/plugins/bootstrap/mixins';
+@import 'src/theme/sass/plugins/bootstrap/utilities';
 @import 'src/theme/sass/plugins/bootstrap/grid';
+@import 'src/theme/sass/plugins/bootstrap/tooltip';
+@import 'src/theme/sass/plugins/bootstrap/utilities/api';
 
 // General web ::: files
 @import 'src/theme/sass/core/general';

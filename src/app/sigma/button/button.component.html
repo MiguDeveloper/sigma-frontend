@@ -1,6 +1,8 @@
 <button
   (click)="!disabled ? clicked.emit() : null"
   [type]="type"
+  [tooltip]="msgTooltip"
+  [placement]="placeTooltip"
   class="btn btn--{{ size }} btn--{{ buttonStyle }} {{ customClass }} {{
     btnBlockClass
   }}"
