@@ -13,9 +13,9 @@
 // @import 'mixins/color-scheme';
 // @import 'mixins/image';
 // @import 'mixins/resize';
-// @import 'mixins/visually-hidden';
+@import 'mixins/visually-hidden';
 @import 'mixins/reset-text';
-// @import 'mixins/text-truncate';
+@import 'mixins/text-truncate';
 
 // Utilities
 @import 'mixins/utilities';
@@ -38,6 +38,6 @@
 // @import 'mixins/transition';
 
 // Layout
-// @import 'mixins/clearfix';
+@import 'mixins/clearfix';
 // @import 'mixins/container';
 @import 'mixins/grid';
