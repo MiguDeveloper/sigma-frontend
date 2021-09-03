@@ -196,12 +196,7 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <p class="card-desc">Warning message and confirm message</p>
-          <sg-button
-            [msgTooltip]="'Tooltip in right'"
-            [placeTooltip]="'right'"
-            (clicked)="toggleAlertConfirm()"
-            >Alert básico</sg-button
-          >
+          <sg-button (clicked)="toggleAlertConfirm()">Alert básico</sg-button>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <p class="card-desc">Cuadro de dialogo posicionado</p>
@@ -253,17 +248,6 @@
           [placeTooltip]="'bottom'"
           >Tooltip on bottom</sg-button
         >
-        <div>
-          <button
-            type="button"
-            class="btn btn-default btn-secondary mb-2"
-            tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-            placement="right"
-            triggers="focus"
-          >
-            Tooltip on right
-          </button>
-        </div>
       </div>
     </sg-simple-card>
   </div>

@@ -1,4 +1,6 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { SigmaModule } from './../sigma/sigma.module';
 import { RouterModule } from '@angular/router';
 import { SidebarModule } from './sidebar/sidebar.module';
@@ -18,7 +20,9 @@ import { FooterComponent } from './footer/footer.component';
     RouterModule,
     SidebarModule,
     PagesRoutingModule,
+    BrowserAnimationsModule,
     TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
   ],
 })
 export class PagesModule {}

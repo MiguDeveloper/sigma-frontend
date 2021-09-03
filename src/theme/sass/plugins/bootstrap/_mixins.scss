@@ -24,7 +24,7 @@
 // @import 'mixins/alert';
 // @import 'mixins/backdrop';
 // @import 'mixins/buttons';
-// @import 'mixins/caret';
+@import 'mixins/caret';
 // @import 'mixins/pagination';
 // @import 'mixins/lists';
 // @import 'mixins/list-group';
@@ -33,8 +33,8 @@
 
 // Skins
 @import 'mixins/border-radius';
-// @import 'mixins/box-shadow';
-// @import 'mixins/gradients';
+@import 'mixins/box-shadow';
+@import 'mixins/gradients';
 // @import 'mixins/transition';
 
 // Layout
