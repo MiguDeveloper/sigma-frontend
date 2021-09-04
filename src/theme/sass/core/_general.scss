@@ -11,8 +11,14 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   color: var(--sg-color-primary);
+}
+
+img,
+svg {
+  vertical-align: middle;
 }
 
 .list-unstyled {
@@ -25,12 +31,16 @@ a {
   text-decoration: none;
 }
 
-.font-size-22 {
-  font-size: 22px !important;
+.font-size-12 {
+  font-size: 12px !important;
 }
 
 .font-size-18 {
   font-size: 18px !important;
+}
+
+.font-size-22 {
+  font-size: 22px !important;
 }
 
 .rounded-circle {
@@ -45,6 +55,11 @@ a {
   position: relative;
 }
 
+.avatar-xs {
+  height: 2rem;
+  width: 2rem;
+}
+
 .flex-space-between {
   display: flex;
   justify-content: space-between;
@@ -55,12 +70,21 @@ a {
   display: flex;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .grid {
   display: grid;
 }
 
 .gap-2 {
   gap: 0.5rem !important;
+}
+
+.p-1r {
+  padding: 1rem !important;
 }
 
 .card-desc {
@@ -75,4 +99,8 @@ a {
 
 .vert-align-middle {
   vertical-align: middle;
+}
+
+.text-muted {
+  color: var(--sg-color-text-muted);
 }
