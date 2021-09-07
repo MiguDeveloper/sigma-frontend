@@ -7,29 +7,34 @@
     </div>
     <div class="box-flex">
       <div class="btn-group-dropdown box-flex">
-        <button
-          class="btn-nav btn-header font-size-22 noti-icon"
-          id="button-alignment"
-          type="button"
+        <sg-navbar-item #itemNotificacion>
+          <button
+            class="btn-nav btn-header font-size-22 noti-icon"
+            type="button"
+          >
+            <i class="bx bx-bell"></i>
+            <sg-counter-badge>3</sg-counter-badge>
+          </button>
+        </sg-navbar-item>
+        <ul
+          class="sg-menu-dd sg-menu-dd--size list-unstyled {{
+            itemNotificacion.dentro ? 'show' : ''
+          }}"
         >
-          <i class="bx bx-bell"></i>
-          <sg-counter-badge>3</sg-counter-badge>
-        </button>
-        <ul class="sg-menu-dd sg-menu-dd--size list-unstyled">
           <div class="p-1r">
             <div class="flex-space-between">
               <h3>Notificaciones</h3>
             </div>
           </div>
           <li>
-            <a class="notificacion-item" href="#">
-              <div class="notificacion-item__container">
+            <a class="menu-item menu-item--notif" href="#">
+              <div class="menu-item__container">
                 <img
                   src="./assets/avatar-migudev.jpg"
                   alt="migudev"
                   class="rounded-circle avatar-xs"
                 />
-                <div class="notificacion-item__body flex-column">
+                <div class="menu-item__body flex-column">
                   <h6>Miguel Chinchay</h6>
                   <div class="font-size-12 text-muted">
                     It will seem like simplified English.
@@ -39,14 +44,14 @@
             </a>
           </li>
           <li>
-            <a class="notificacion-item" href="#">
-              <div class="notificacion-item__container">
+            <a class="menu-item menu-item--notif" href="#">
+              <div class="menu-item__container">
                 <img
                   src="./assets/avatar-girl.jpg"
                   alt="migudev"
                   class="rounded-circle avatar-xs"
                 />
-                <div class="notificacion-item__body flex-column">
+                <div class="menu-item__body flex-column">
                   <h6>Salena Layfield</h6>
                   <div class="font-size-12 text-muted">
                     If several languages coalesce the grammar
@@ -56,14 +61,14 @@
             </a>
           </li>
           <li>
-            <a class="notificacion-item" href="#">
-              <div class="notificacion-item__container">
+            <a class="menu-item menu-item--notif" href="#">
+              <div class="menu-item__container">
                 <img
                   src="./assets/avatar-migudev.jpg"
                   alt="migudev"
                   class="rounded-circle avatar-xs"
                 />
-                <div class="notificacion-item__body flex-column">
+                <div class="menu-item__body flex-column">
                   <h6>Miguel Chinchay</h6>
                   <div class="font-size-12 text-muted">
                     It will seem like simplified English.
@@ -80,39 +85,35 @@
         </ul>
       </div>
 
-      <div dropdown [autoClose]="true" class="btn-group-dropdown">
-        <button
-          dropdownToggle
-          id="button-basic"
-          aria-controls="dropdown-basic"
-          class="btn-nav btn-header box-flex dropdown-toggle"
-          type="button"
-        >
-          <img
-            class="header-profile-user rounded-circle"
-            src="../../../assets/user-5.jpeg"
-            alt=""
-          />
-          <span>Miguel</span>
-          <i class="bx bx-chevron-down"></i>
-        </button>
+      <div class="btn-group-dropdown">
+        <sg-navbar-item #itemProfile>
+          <button class="btn-nav btn-header box-flex" type="button">
+            <img
+              class="header-profile-user rounded-circle"
+              src="assets/user-5.jpeg"
+              alt=""
+            />
+            <span>Miguel</span>
+            <i class="bx bx-chevron-down"></i>
+          </button>
+        </sg-navbar-item>
         <ul
-          *dropdownMenu
-          id="dropdown-basic"
-          class="dropdown-menu"
-          role="menu"
-          aria-labelledby="button-basic"
+          class="sg-menu-dd list-unstyled {{
+            itemProfile.dentro ? 'show' : ''
+          }}"
         >
-          <li role="menuitem"><a class="dropdown-item" href="#">Perfil</a></li>
-          <li role="menuitem">
-            <a class="dropdown-item" href="#">Configuración</a>
+          <li>
+            <a class="menu-item" href="#">Perfil</a>
           </li>
-          <li role="menuitem">
-            <a class="dropdown-item" href="#">Seguridad</a>
+          <li>
+            <a class="menu-item" href="#">Configuración</a>
+          </li>
+          <li>
+            <a class="menu-item" href="#">Seguridad</a>
           </li>
           <li class="divider dropdown-divider"></li>
-          <li role="menuitem">
-            <a class="dropdown-item" href="#">Cerrar sesión</a>
+          <li>
+            <a class="menu-item" href="#">Cerrar sesión</a>
           </li>
         </ul>
       </div>
