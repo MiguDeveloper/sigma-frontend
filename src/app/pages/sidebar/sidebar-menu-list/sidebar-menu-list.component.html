@@ -1,4 +1,4 @@
-<nav class="sidebar">
+<nav class="sidebar" [ngClass]="{ hide: hideSidebar }">
   <div class="sidebar__header">
     <a [routerLink]="['/inicio']" class="sidebar__brand">
       <img src="/assets/logo-light.png" class="sidebar__img" />

@@ -2,6 +2,15 @@
   display: block;
   margin-left: 250px;
   overflow: hidden;
+  transition: margin-left 0.5s ease;
+
+  @include breakpoint-down(medium) {
+    margin-left: 0;
+  }
+
+  &--full {
+    margin-left: 0;
+  }
 
   & .pages-content {
     width: 100%;

@@ -1,7 +1,7 @@
 import { Config } from './../types/Config';
 import { SidebarService } from './../sidebar.service';
 import { Menu } from './../interfaces/menu-list.class';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-menu-list',
@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar-menu-list.component.scss'],
 })
 export class SidebarMenuListComponent implements OnInit {
+  @Input() hideSidebar = false;
   menu: Menu;
   config: Config = { multi: false };
 
