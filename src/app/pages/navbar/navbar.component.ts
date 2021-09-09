@@ -1,4 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SidebarService } from './../sidebar/sidebar.service';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'sg-navbar',
@@ -6,17 +13,35 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  @Output() toggleMenu = new EventEmitter();
-  private hideSidebar =
-    JSON.parse(localStorage.getItem('hideSidebar')) || false;
+  private hideSidebar = false;
+  screenWidth: number;
 
-  constructor() {}
+  constructor(private sidebarService: SidebarService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getScreenSize();
+    if (this.screenWidth <= 783) {
+      this.hideSidebar = true;
+      setTimeout(() => {
+        this.sidebarService.showHide.emit(this.hideSidebar);
+      }, 500);
+    }
+
+    this.sidebarService.showHide.subscribe((data) => {
+      this.hideSidebar = data;
+      console.log('data: ', data);
+      console.log('hideSidebar: ', this.hideSidebar);
+    });
+  }
 
   toggleAction() {
     this.hideSidebar = !this.hideSidebar;
-    localStorage.setItem('hideSidebar', JSON.stringify(this.hideSidebar));
-    this.toggleMenu.emit(this.hideSidebar);
+    this.sidebarService.showHide.emit(this.hideSidebar);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?) {
+    this.screenWidth = window.innerWidth;
+    console.log(this.screenWidth);
   }
 }

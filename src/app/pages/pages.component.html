@@ -1,6 +1,6 @@
-<app-sidebar-menu-list [hideSidebar]="hideNav"></app-sidebar-menu-list>
+<sg-sidebar-menu-list></sg-sidebar-menu-list>
 <div class="main-content" [ngClass]="{ 'main-content--full': hideNav }">
-  <sg-navbar (toggleMenu)="showHideNav($event)"></sg-navbar>
+  <sg-navbar></sg-navbar>
   <div class="pages-content">
     <div class="container-fluid">
       <router-outlet></router-outlet>

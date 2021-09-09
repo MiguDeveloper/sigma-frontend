@@ -1,3 +1,4 @@
+import { SidebarService } from './sidebar/sidebar.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
   hideNav = false;
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor(private sidebarService: SidebarService) {}
+
+  ngOnInit(): void {
+    this.sidebarService.showHide.subscribe((data) => (this.hideNav = data));
+  }
 
   showHideNav(stateCheck = false) {
     this.hideNav = stateCheck;

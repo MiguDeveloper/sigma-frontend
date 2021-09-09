@@ -1,17 +1,16 @@
-import { Config } from './../types/Config';
 import { SidebarService } from './../sidebar.service';
 import { Menu } from './../interfaces/menu-list.class';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-sidebar-menu-list',
+  selector: 'sg-sidebar-menu-list',
   templateUrl: './sidebar-menu-list.component.html',
   styleUrls: ['./sidebar-menu-list.component.scss'],
 })
 export class SidebarMenuListComponent implements OnInit {
-  @Input() hideSidebar = false;
+  hideSidebar = false;
+
   menu: Menu;
-  config: Config = { multi: false };
 
   constructor(private sidebarService: SidebarService) {}
 
@@ -21,6 +20,7 @@ export class SidebarMenuListComponent implements OnInit {
 
   getMenu() {
     this.sidebarService.getMenuList().subscribe((menu) => (this.menu = menu));
+    this.sidebarService.showHide.subscribe((data) => (this.hideSidebar = data));
   }
 
   toggle(idxGroup: number, idxItem: number) {
@@ -41,5 +41,10 @@ export class SidebarMenuListComponent implements OnInit {
 
     dropdown.classList.toggle('menu__dropdown--active');
     submenu.setAttribute('style', `max-height:${height}px`);
+  }
+
+  closeSidebarToggle() {
+    this.hideSidebar = !this.hideSidebar;
+    this.sidebarService.showHide.emit(this.hideSidebar);
   }
 }

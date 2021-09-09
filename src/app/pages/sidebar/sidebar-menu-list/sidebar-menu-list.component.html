@@ -3,6 +3,15 @@
     <a [routerLink]="['/inicio']" class="sidebar__brand">
       <img src="/assets/logo-light.png" class="sidebar__img" />
     </a>
+    <div class="sidebar-toggle">
+      <button
+        type="button"
+        (click)="closeSidebarToggle()"
+        class="sidebar-toggle__btn"
+      >
+        <i class="bx bx-x"></i>
+      </button>
+    </div>
   </div>
 
   <div class="sidebar__body">
