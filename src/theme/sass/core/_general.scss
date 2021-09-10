@@ -35,6 +35,10 @@ a {
   font-size: 12px !important;
 }
 
+.font-size-14 {
+  font-size: 14px !important;
+}
+
 .font-size-18 {
   font-size: 18px !important;
 }
@@ -101,4 +105,16 @@ a {
 
 .text-muted {
   color: var(--sg-color-text-muted);
+}
+
+.text-primary {
+  color: var(--sg-color-text-primary) !important;
+}
+
+.text-danger {
+  color: var(--sg-color-danger) !important;
+}
+
+.text-center {
+  text-align: center !important;
 }

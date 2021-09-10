@@ -38,6 +38,10 @@
   height: 100%;
   position: relative;
 
+  @include breakpoint-down('medium-sm') {
+    position: static;
+  }
+
   & .btn-nav {
     position: relative;
   }
@@ -55,7 +59,6 @@
   left: auto;
   right: 0;
   background: white;
-  max-width: 280px;
   box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
   border-radius: 0.25rem;
   border: 0 solid rgba(0, 0, 0, 0.15);
@@ -65,8 +68,17 @@
   animation-name: DropDownSlide;
   animation-duration: 0.3s;
 
-  &--size {
+  @include breakpoint-down('medium-sm') {
+    left: 10px;
+    right: 10px;
+  }
+
+  &--md {
     width: 320px;
+
+    @include breakpoint-down('medium-sm') {
+      width: auto;
+    }
   }
 
   &.show {
@@ -80,10 +92,15 @@
   padding: 0.35rem 1.5rem;
   font-weight: 400;
   color: var(--sg-color-item-dd);
+  white-space: nowrap;
 
   &:hover {
     background: var(--sg-color-bg-item-dd);
     color: var(--sg-color-menu-item-hover);
+  }
+
+  &--last {
+    padding: 0.3rem 1.5rem 0.59rem;
   }
 
   &--notif {
@@ -100,6 +117,14 @@
     & h6 {
       font-size: 0.8125rem;
     }
+  }
+}
+
+a.notif-anchor {
+  padding: 0.325rem 1.5rem 0.7rem;
+
+  &:hover {
+    color: var(--sg-color-blue-strong) !important;
   }
 }
 

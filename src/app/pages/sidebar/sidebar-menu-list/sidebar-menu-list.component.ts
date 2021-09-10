@@ -9,7 +9,6 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 })
 export class SidebarMenuListComponent implements OnInit {
   hideSidebar = false;
-
   menu: Menu;
 
   constructor(private sidebarService: SidebarService) {}

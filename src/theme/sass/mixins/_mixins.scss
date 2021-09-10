@@ -1,6 +1,7 @@
-// 375px: 23.5 mobile, 783px:48.9375
+// 783px:48.9375, 601px:  375px: 23.5 mobile,
 $breakpoint-down: (
   'medium': '48.9375em',
+  'medium-sm': '37.5625em',
   'small': '23.5em',
 );
 

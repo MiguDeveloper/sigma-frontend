@@ -27,6 +27,7 @@
             <span
               *ngIf="itemOfGroup.items?.length; else navItem"
               (click)="toggle(idxGroup, idxGroupItem)"
+              routerLinkActive="active"
               class="menu__dropdown menu--has-arrow"
               id="menu__dropdown{{ idxGroup }}{{ idxGroupItem }}"
               ><i [class]="itemOfGroup.icon"></i>{{ itemOfGroup.name }}</span
