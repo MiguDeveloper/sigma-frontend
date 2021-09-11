@@ -23,11 +23,11 @@
           <li
             *ngFor="let itemOfGroup of group.items; let idxGroupItem = index"
             class="menu__subitem-item"
+            [routerLinkActive]="['active']"
           >
             <span
               *ngIf="itemOfGroup.items?.length; else navItem"
               (click)="toggle(idxGroup, idxGroupItem)"
-              routerLinkActive="active"
               class="menu__dropdown menu--has-arrow"
               id="menu__dropdown{{ idxGroup }}{{ idxGroupItem }}"
               ><i [class]="itemOfGroup.icon"></i>{{ itemOfGroup.name }}</span
@@ -42,6 +42,7 @@
             <ul
               *ngIf="itemOfGroup.items?.length"
               class="list-unstyled"
+              [routerLinkActive]="['active-menu']"
               id="asSubmenu{{ idxGroup }}{{ idxGroupItem }}"
             >
               <li *ngFor="let item of itemOfGroup.items" class="menu__item">

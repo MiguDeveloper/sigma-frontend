@@ -99,7 +99,7 @@ export class SidebarItems {
                   name: 'Wallet',
                   order: 1,
                   enable: true,
-                  href: '/dashboard',
+                  href: '/dash',
                 },
                 {
                   name: 'Exchange',

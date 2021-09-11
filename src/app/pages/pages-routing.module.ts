@@ -1,3 +1,4 @@
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { SgModulesRoutes } from './../utils/sg-routes';
 import { Constants } from './../utils/constants';
 import { PagesComponent } from './pages.component';
@@ -9,6 +10,10 @@ const routes: Routes = [
     path: Constants.ROUTES.CLEAN,
     component: PagesComponent,
     children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
       {
         path: SgModulesRoutes.UiElements,
         loadChildren: () =>

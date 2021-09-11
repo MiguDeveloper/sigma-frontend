@@ -96,16 +96,28 @@
     color: white;
   }
 
-  &__subitem li i {
-    min-width: 1.75rem;
-    padding-bottom: 0.125em;
-    font-size: 1.25rem;
-    line-height: 1.40625rem;
-    vertical-align: middle;
-  }
+  &__subitem {
+    li i {
+      min-width: 1.75rem;
+      padding-bottom: 0.125em;
+      font-size: 1.25rem;
+      line-height: 1.40625rem;
+      vertical-align: middle;
+    }
 
-  &__subitem-item > a.active {
-    color: white;
+    &-item {
+      &.active > ul.active-menu {
+        max-height: 600px;
+      }
+
+      &.active span {
+        color: white;
+      }
+
+      & > a.active {
+        color: white;
+      }
+    }
   }
 
   &__item a {
@@ -133,7 +145,6 @@ ul li a:hover {
 }
 
 .menu__dropdown.menu__dropdown--active {
-  color: white;
 }
 
 ul[id^='asSubmenu'] {

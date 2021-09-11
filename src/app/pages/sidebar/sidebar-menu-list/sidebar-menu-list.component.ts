@@ -23,23 +23,26 @@ export class SidebarMenuListComponent implements OnInit {
   }
 
   toggle(idxGroup: number, idxItem: number) {
-    let height = 400;
+    let height = 600;
     const submenu = document.getElementById(`asSubmenu${idxGroup}${idxItem}`);
     const dropdown = document.getElementById(
       `menu__dropdown${idxGroup}${idxItem}`
     );
     const maxHeight = submenu.style.maxHeight;
 
-    if (maxHeight || maxHeight === '400px') {
+    if (maxHeight === '600px') {
       height = 0;
     }
 
     if (maxHeight === '0px') {
-      height = 400;
+      height = 600;
     }
 
-    dropdown.classList.toggle('menu__dropdown--active');
-    submenu.setAttribute('style', `max-height:${height}px`);
+    const isActiveSubmenu = submenu.classList.contains('active-menu');
+    if (!isActiveSubmenu) {
+      dropdown.classList.toggle('menu__dropdown--active');
+      submenu.setAttribute('style', `max-height:${height}px`);
+    }
   }
 
   closeSidebarToggle() {

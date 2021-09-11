@@ -12,9 +12,10 @@ import { PagesComponent } from './pages.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarItemComponent } from './navbar/navbar-item/navbar-item.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [PagesComponent, NavbarComponent, FooterComponent, NavbarItemComponent],
+  declarations: [PagesComponent, NavbarComponent, FooterComponent, NavbarItemComponent, DashboardComponent],
   imports: [
     CommonModule,
     SigmaModule,
